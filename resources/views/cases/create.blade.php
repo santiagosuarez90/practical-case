@@ -24,9 +24,9 @@
 
                             <div class="md-12">
                                 <label for="select_client" class="form-label"><strong>Cliente:</strong></label>
-                                <select name="select_client" id="select_client" class="form-control">
+                                <select name="client_id" id="client_id" class="form-control">
                                     @foreach ($clients as $client)
-                                        <option value="{{$client->id}}">
+                                        <option value="{{$client->identification}}">
                                             {{$client->name}} {{$client->last_name}}
                                         </option>
                                     @endforeach
@@ -35,7 +35,7 @@
 
                             <div class="py-12">
                                 <label for="select_case_type" class="form-label"><strong>Cliente:</strong></label>
-                                <select name="select_case_type" id="select_case_type" class="form-control">
+                                <select name="cases_type_id" id="cases_type_id" class="form-control">
                                     @foreach ($casesType as $caseType)
                                         <option value="{{$caseType->id}}">
                                             {{$caseType->name}}
@@ -46,7 +46,7 @@
 
                             <div class="md-12">
                                 <label for="select_client" class="form-label"><strong>Fecha Inicio:</strong></label>
-                                <input id="datepicker" width="276"/>
+                                <input id="start_date" width="276"/>
                                 @error('start_date')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -54,8 +54,8 @@
 
                             <div class="md-12">
                                 <label for="inputDetail" class="form-label"><strong>Detail:</strong></label>
-                                <textarea class="form-control @error('observation') is-invalid @enderror" style="height:150px" name="txt_observation"
-                                    id="txt_observation" placeholder="Observaciones"></textarea>
+                                <textarea class="form-control @error('observation') is-invalid @enderror" style="height:150px" name="observation"
+                                    id="observation" placeholder="Observaciones"></textarea>
                                 @error('observation')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
@@ -70,9 +70,3 @@
         </div>
     </div>
 </x-app-layout>
-
-<script>
-    $('#datepicker').datepicker({
-        uiLibrary: 'bootstrap5'
-    });
-</script>

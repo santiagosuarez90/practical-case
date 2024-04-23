@@ -6,6 +6,7 @@ use App\Http\Requests\CaseRequest;
 use App\Models\Cases;
 use App\Models\CaseType;
 use App\Models\Client;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CaseController extends Controller
@@ -30,9 +31,24 @@ class CaseController extends Controller
      * @param  \App\Models\Cases  $cases
      * @return \Illuminate\Http\Response
      */
-    public function new(CaseRequest $request)
+    public function new(Request $request)
     {
-        Cases::create($request->validated());
+
+        $timestamp = Carbon::now()->timestamp;
+
+        $data = [
+            'client_id' => $request->client_id,
+            'cases_type_id' => $request->cases_type_id,
+            'start_date' => '2024-04-23 17:09:14',
+            'observation' => $request->observation,
+            'status' => 'ACTIVE'
+        ];
+
+//        dd($data);
+
+
+
+        Cases::create($data);
 
         return redirect()->route('cases-create')
             ->with('success', 'Product created successfully.');

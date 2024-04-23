@@ -24,8 +24,9 @@ class CaseRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'detail' => 'required'
+            'client_id' => 'required',
+            'cases_type_id' => 'required',
+//            'start_date' => 'required',
         ];
     }
 }

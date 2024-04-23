@@ -33,21 +33,11 @@
                             <tbody>
                             @forelse ($cases as $case)
                                 <tr>
-                                    <td>{{ ++$i }}</td>
                                     <td>{{ $case->id }}</td>
-                                    <td>
-                                        <form action="{{ route('products.destroy',$case->id) }}" method="POST">
-
-                                            <a class="btn btn-info btn-sm" href="{{ route('products.show',$case->id) }}"><i class="fa-solid fa-list"></i> Show</a>
-
-                                            <a class="btn btn-primary btn-sm" href="{{ route('products.edit',$case->id) }}"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
-                                        </form>
-                                    </td>
+                                    <td>{{ $case->client_id }}</td>
+                                    <td>{{ $case->cases_type_id }}</td>
+                                    <td>{{ $case->start_date }}</td>
+                                    <td>{{ $case->status }}</td>
                                 </tr>
                             @empty
                                 <tr>
