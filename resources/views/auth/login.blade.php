@@ -51,6 +51,13 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
+
+            <!-- Remember Me -->
+            <div class="block mt-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                </label>
+            </div>
         </form>
     </x-auth-card>
 </x-guest-layout>

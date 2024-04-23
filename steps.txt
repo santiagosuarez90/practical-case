@@ -27,6 +27,10 @@ npm install
 npm run dev
 
 
+php artisan make:migration create_products_table --create=products
+php artisan make:request ProductStoreRequest
+artisan make:controller ProductController --resource --model=Product
+
 
 
 
