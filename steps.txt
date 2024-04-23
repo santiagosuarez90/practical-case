@@ -1,0 +1,32 @@
+Pasos:
+GitHub
+https://github.com/santiagosuarez90/practical-case.git
+santiagosuarez90@hotmail.com
+Ssuarez990
+Instalar PhpStorm
+Instalar Firefox
+Instalar Notepad ++
+Instalar WampServer
+Instalar Complemento de VC
+https://wampserver.aviatechno.net
+Instalar Composer
+Instalar NodeJs y npm
+Crear la Aplicación
+composer create-project laravel/laravel example-app
+Instalar Autenticación
+composer require laravel/breeze –dev
+php artisan breeze:install
+php artisan migrate
+npm install
+npm run dev
+Agregar en el archive app/Providers/AppServiceProvider.php
+	Schema::defaultStringLength(191);
+
+php artisan migrate:refresh –seed
+npm install
+npm run dev
+
+
+
+
+
